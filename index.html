@@ -1,1 +1,30 @@
-hello word
+<h1>&lt;font color=#778899 &gt;Protocal Buffers Learning Notes &lt;/font&gt;</h1>
+
+<h2>&lt;font color=green &gt;<em>.proto</em> file &lt;/font&gt;</h2>
+
+<p><code>message</code>:打算序列化的数据结构单位 --&gt; 为每个mmessage和message中的每个field命名。</p>
+
+<h3>语法</h3>
+
+<ol><li><code>package tutorial;</code> 包分割管理，避免命名冲突</li><li>基础数据类型，包含bool, int32, float, double, and string</li><li>复杂数据类型：自定义<code>message</code>，可嵌套定义</li><li><code>=1</code>,<code>=2</code>: 是二进制编码时对数据成员的唯一tag。（tip：1-15编码少于一个字节，因此常必需字段用1-15，repeated字段会对其分配的数字tag re-encoding）</li><li>modifiers：每个field都必须有一个修饰语<ul><li><code>required</code>：必需字段，如果debug阶段出现，则会产生assertion错误。</li><li><code>optional</code>：可选字段，可填写默认值（<code>[default = HOME];</code>），如果未填写，则系统默认基础类型值。</li><li><code>repeated</code>：可重复字段，可以为0次。</li></ul></li></ol>
+
+<h3>编译<em>.proto</em>文件</h3>
+
+<p>for c++:
+<code>protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto</code></p>
+
+<h2>&lt;font color=green &gt; generated protobuf API &lt;/font&gt;</h2>
+
+<ol><li>getters：<em>.proto</em> 文件中定义的field的名字的小写</li><li>setters：前缀<code>set_</code> + 定义的名称</li><li>是否存在：<code>has_</code> + 定义的名称</li><li>清空：<code>clear_</code> + 定义的名称</li></ol>
+
+<p>字符串类型field的额外API：</p>
+
+<ul><li><code>mutable_</code> + 定义的名称</li></ul>
+
+<p>repeated field 的额外函数：</p>
+
+<ul><li>名称 + <code>_size()</code></li></ul>
+
+<p>枚举类型与嵌套类：</p>
+
+<ul><li><p>类名称::field名称</p></li></ul>
