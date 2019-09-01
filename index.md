@@ -1,6 +1,6 @@
-#<font color=#228B22 >Protocal Buffers Learning Notes </font>
+# Protocal Buffers Learning Notes  
 
-## <font color=#778899 >*.proto* file </font>
+## *.proto* file  
 
 `message`:打算序列化的数据结构单位 --> 为每个mmessage和message中的每个field命名。
 
@@ -18,7 +18,7 @@
 for c++:
 `protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto`
 
-## <font color=#778899 > generated protobuf API </font>
+##  generated protobuf API  
 1. getters：*.proto* 文件中定义的field的名字的小写
 2. setters：前缀`set_` + 定义的名称
 3. 是否存在：`has_` + 定义的名称
@@ -49,7 +49,7 @@ repeated field 的额外函数：
 
 `ShutdownProtobufLibrary()`：回收，避免内存泄露。
 
-## <font color=#778899 > 详细文档 </font>
+##  详细文档  
 1. [基础文档](https://developers.google.com/protocol-buffers/docs/cpptutorial)
 2. [*.proto* 文件语法](https://developers.google.com/protocol-buffers/docs/proto)
 3. [C++ protobuf代码生成](https://developers.google.com/protocol-buffers/docs/reference/cpp-generated)
