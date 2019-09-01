@@ -99,7 +99,7 @@ function getDefaultOpts (simple) {
       type: 'boolean'
     },
     smartIndentationFix: {
-      defaultValue: false,
+      defaultValue: true,
       description: 'Tries to smartly fix indentation in es6 strings',
       type: 'boolean'
     },
