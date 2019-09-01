@@ -1,4 +1,4 @@
-#<font color=#8B008B >Protocal Buffers Learning Notes </font>
+#<font color=#228B22 >Protocal Buffers Learning Notes </font>
 
 ## <font color=#778899 >*.proto* file </font>
 
