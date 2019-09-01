@@ -74,7 +74,7 @@ function getDefaultOpts (simple) {
       type: 'boolean'
     },
     tables: {
-      defaultValue: false,
+      defaultValue: true,
       describe: 'Turn on/off tables support',
       type: 'boolean'
     },
