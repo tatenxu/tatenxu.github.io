@@ -148,6 +148,13 @@
     
     
         <url>
+            <loc>/grpc/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2019-08-30</lastmod>
+        </url>
+    
+        <url>
             <loc>/protobuf/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

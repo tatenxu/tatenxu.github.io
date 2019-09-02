@@ -224,7 +224,7 @@ August 30, 2019
 
 <h3 id="编译proto文件">编译<em>.proto</em>文件</h3>
 
-<p>for c++：
+<p>for c++：<br />
 <code class="highlighter-rouge">protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto</code></p>
 
 <h2 id="generated-protobuf-api-">generated protobuf API</h2>
@@ -258,9 +258,9 @@ August 30, 2019
 
 <p>操作整个message</p>
 
-<p><code class="highlighter-rouge">bool SerializeToString(string* output) const;</code> ：序列化为字符串
-<code class="highlighter-rouge">bool ParseFromString(const string&amp; data);</code>：从字符串解析
-<code class="highlighter-rouge">bool SerializeToOstream(ostream* output) const;</code>：序列化至ostream
+<p><code class="highlighter-rouge">bool SerializeToString(string* output) const;</code> ：序列化为字符串<br />
+<code class="highlighter-rouge">bool ParseFromString(const string&amp; data);</code>：从字符串解析<br />
+<code class="highlighter-rouge">bool SerializeToOstream(ostream* output) const;</code>：序列化至ostream<br />
 <code class="highlighter-rouge">bool ParseFromIstream(istream* input); </code>：从istream解析</p>
 
 <h3 id="notice">notice</h3>
@@ -293,20 +293,20 @@ August 30, 2019
                         
                         
                             <li>
+                                <a href="/grpc/">
+                                    
+                                        <img src="../assets/notes-imgs/gRPC.png">
+                                    
+                                    <h3>gRPC Overview</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/">
                                     
                                         <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
                                     
                                     <h3>笔记模板</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="/vim/">
-                                    
-                                        <img src="../assets/notes-imgs/vim.png">
-                                    
-                                    <h3>VIM 使用tips</h3>
                                 </a>
                             </li>
                         
@@ -342,13 +342,13 @@ August 30, 2019
         <a href="javascript:void(0);">Go back to top</a>
     </div>
     
-    <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/" class="post-preview">
+    <a href="/grpc/" class="post-preview">
         <div class="image">
             
-                <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
+                <img src="../assets/notes-imgs/gRPC.png">
             
         </div>
-        <h3 class="title">笔记模板</h3>
+        <h3 class="title">gRPC Overview</h3>
     </a>
 </div>
 
@@ -718,7 +718,7 @@ ShutdownProtobufLibrary()：回收，避免内存泄露。
   C++ API
 
 ",
-            "wordcount": "144",
+            "wordcount": "148",
             "inLanguage": "cn",
             "dateCreated": "2019-08-30/",
             "datePublished": "2019-08-30/",

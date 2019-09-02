@@ -17,26 +17,26 @@
     
     
 
-    <title>笔记模板 | JJW</title>
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+    <title>gRPC Overview | JJW</title>
+    <meta name="description" content="gRPC C++ 快速开始文档的学习笔记。">
     
-        <meta name="keywords" content="template, blog">
+        <meta name="keywords" content="notes, gRPC">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="笔记模板 | JJW">
-    <meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
-    <meta property="twitter:image:src" content="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg">
+    <meta name="twitter:title" content="gRPC Overview | JJW">
+    <meta name="twitter:description" content="gRPC C++ 快速开始文档的学习笔记。">
+    <meta property="twitter:image:src" content="../assets/notes-imgs/gRPC.png">
     
         <meta name="twitter:site" content="@twitter_username">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/">
-    <meta property="og:title" content="笔记模板 | JJW">
-    <meta property="og:image" content="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg">
-    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+    <meta property="og:url" content="/grpc/">
+    <meta property="og:title" content="gRPC Overview | JJW">
+    <meta property="og:image" content="../assets/notes-imgs/gRPC.png">
+    <meta property="og:description" content="gRPC C++ 快速开始文档的学习笔记。">
     <meta property="og:site_name" content="JJW | 's 学习笔记">
 
     <!-- Favicon -->
@@ -68,7 +68,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.min.css">
-    <link rel="canonical" href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/">
+    <link rel="canonical" href="/grpc/">
     <link rel="alternate" type="application/rss+xml" title="JJW | 's 学习笔记" href="/feed.xml" />
 </head>
 
@@ -180,145 +180,153 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2019-05-17T07:48:05+08:00">
+                        <time class="date" datetime="2019-08-30T20:48:05+08:00">
                             
 
 
-May 17, 2019
+August 30, 2019
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>1 min to read</span>
                 </p>
-                <h1 class="post-title">笔记模板</h1>
-                <p class="post-subtitle">。。。</p>
+                <h1 class="post-title">gRPC Overview</h1>
+                <p class="post-subtitle">gRPC C++ 快速开始文档的学习笔记。</p>
 
                 
-                    <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg" alt="Featured image" class="post-cover">
+                    <img src="../assets/notes-imgs/gRPC.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
 
 
 
-                <p>Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                <h2 id="grpc-guide-">gRPC Guide</h2>
+<h3 id="service-defination-">service defination</h3>
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
+<p>基于protocal buffers，关键字	<code class="highlighter-rouge">service</code>、<code class="highlighter-rouge">rpc</code>.</p>
 
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-
-<h2 id="inline-html-elements">Inline HTML elements</h2>
-
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-
-<ul>
-  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Thiago Rossener</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
-</ul>
-
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
-
-<h1 id="heading-1">Heading 1</h1>
-<h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
-<h4 id="heading-4">Heading 4</h4>
-
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-
-<p>–page-break–</p>
-
-<h2 id="code">Code</h2>
-
-<p>Cum sociis natoque penatibus et magnis dis <code class="highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example can be run directly in your JavaScript console</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="dl">"</span><span class="s2">a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">b</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">return a + b</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">// Call the function</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span>
-</code></pre></div></div>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h2 id="lists">Lists</h2>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+<p>rpc分类：</p>
 
 <ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+  <li>unary RPCs
+    <ul>
+      <li>server: <code class="highlighter-rouge">funcname(ServerContext* context, receiveObj, retObj)</code></li>
+      <li>client: <code class="highlighter-rouge">Status funcname(ServerContext* context, putObj, getObj)</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Server streaming RPCs</p>
+
+    <ul>
+      <li>
+        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, receeiveObj, ServerWriter)</code></p>
+      </li>
+      <li>
+        <p>client: <code class="highlighter-rouge">ClientReader funcname(ServerContext* context, putObj)</code> follow by <code class="highlighter-rouge">reader.read()</code> and end with <code class="highlighter-rouge">Status status = reader-&gt;Finish();</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Client streaming RPC</p>
+
+    <ul>
+      <li>
+        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReader, retObj)</code></p>
+      </li>
+      <li>
+        <p>client: <code class="highlighter-rouge">ClientWriter funcname(ServerContext* context, getObj)</code> 		follow by <code class="highlighter-rouge">writer.write()</code> and end with <code class="highlighter-rouge">writer-&gt;WritesDone();
+  Status status = writer-&gt;Finish();</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Bidirectional streaming RPCs</p>
+
+    <ul>
+      <li>
+        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReaderWriter,)</code></p>
+      </li>
+      <li>
+        <p>client: <code class="highlighter-rouge">ClientReaderWriter funcname(ServerContext* context)</code></p>
+      </li>
+    </ul>
+  </li>
 </ol>
 
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+<h3 id="rpc-生命周期-">RPC 生命周期</h3>
+<h3 id="deadlinestimeouts-">Deadlines/Timeouts</h3>
 
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p><code class="highlighter-rouge">DEADLINE_EXCEEDED</code> error</p>
 
-<h2 id="images">Images</h2>
+<h3 id="rpc-termination-">RPC termination</h3>
 
-<p>Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.</p>
+<p>server 和 client 独立并本地的决策一个rpc是否完成。</p>
 
-<p><img src="https://placehold.it/800x400" alt="placeholder" title="Large example image" /><br />
-<img src="https://placehold.it/400x200" alt="placeholder" title="Medium example image" /><br />
-<img src="https://placehold.it/200x200" alt="placeholder" title="Small example image" /></p>
+<h3 id="metadata-">Metadata</h3>
 
-<h2 id="tables">Tables</h2>
+<p>metadata是一次rpc调用的相关信息。</p>
 
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<h3 id="channel-">Channel</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
+<p>一个channel为一个connection。Channel参数可修改，并且channel是有状态的：<code class="highlighter-rouge">connected</code> &amp; <code class="highlighter-rouge">idle</code>，一些语言还有额外的<code class="highlighter-rouge">quering</code>状态。</p>
 
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<h2 id="grpc-quick-start-">gRPC Quick Start</h2>
+<h3 id="服务端启动-">服务端启动</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void RunServer(const std::string&amp; db_path) {
+    std::string server_address("0.0.0.0:50051");
+    RouteGuideImpl service(db_path);
+
+    ServerBuilder builder;
+    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+    builder.RegisterService(&amp;service);
+    std::unique_ptr&lt;Server&gt; server(builder.BuildAndStart());
+    std::cout &lt;&lt; "Server listening on " &lt;&lt; server_address &lt;&lt; std::endl;
+    server -&gt; Wait();
+}
+</code></pre></div></div>
+
+<p>通过使用ServerBuilder去构建和启动服务器：</p>
+
+<ol>
+  <li>创建服务实现类 <code class="highlighter-rouge">RouteGuideImpl</code> 的一个实例。</li>
+  <li>创建工厂类 <code class="highlighter-rouge">ServerBuilder</code> 的一个实例。</li>
+  <li>在工厂类实例的 <code class="highlighter-rouge">AddListeningPort() </code>方法中指定客户端请求时监听的地址和端口。</li>
+  <li>用工厂类实例注册服务实例。</li>
+  <li>调用工厂类实例的 <code class="highlighter-rouge">BuildAndStart()</code> 方法为服务创建和启动一个RPC服务器。</li>
+  <li>调用服务器的 <code class="highlighter-rouge">Wait()</code> 方法实现阻塞等待，直到进程被杀死或者 Shutdown() 被调用。</li>
+</ol>
+
+<h3 id="客户端-">客户端</h3>
+
+<ol>
+  <li>channel<br />
+首先需要创建一个channel（http2的连接？），APIs：
+    <ul>
+      <li><code class="highlighter-rouge">grpc::CreateChannel();</code></li>
+      <li><code class="highlighter-rouge">grpc::CreateCustomChannel()</code></li>
+      <li><code class="highlighter-rouge">grpc::ChannelArguments</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>stub<br />
+客户端调用server methods需要创建一个stub，API：<em>.proto</em>文件生成代码中的<code class="highlighter-rouge">NewStub()</code>方法。</p>
+  </li>
+  <li>RPC调用：
+    <ul>
+      <li>创建上下文–<code class="highlighter-rouge">ClientContext</code>，不可复用。</li>
+      <li><code class="highlighter-rouge">stub</code>实例远程调用。</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="文档连接-">文档连接</h3>
+
+<p><a href="https://grpc.io/docs/tutorials/basic/cpp/">gRPC C++ Basics</a></p>
+
+<p><a href="https://grpc.github.io/grpc/cpp/index.html">gRPC C++ API</a></p>
 
 
                 <!-- Pagination links -->
@@ -334,11 +342,11 @@ May 17, 2019
                         
                         
                             <li>
-                                <a href="/grpc/">
+                                <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/">
                                     
-                                        <img src="../assets/notes-imgs/gRPC.png">
+                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
                                     
-                                    <h3>gRPC Overview</h3>
+                                    <h3>笔记模板</h3>
                                 </a>
                             </li>
                         
@@ -352,11 +360,11 @@ May 17, 2019
                             </li>
                         
                             <li>
-                                <a href="/vim/">
+                                <a href="/colors/">
                                     
-                                        <img src="../assets/notes-imgs/vim.png">
+                                        <img src="../assets/notes-imgs/colors.png">
                                     
-                                    <h3>VIM 使用tips</h3>
+                                    <h3>Some Colors with RGB Value</h3>
                                 </a>
                             </li>
                         
@@ -368,7 +376,7 @@ May 17, 2019
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="3">
+            <div class="time-bar" data-minutes="1">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -383,13 +391,13 @@ May 17, 2019
         <a href="javascript:void(0);">Go back to top</a>
     </div>
     
-    <a href="/grpc/" class="post-preview">
+    <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/" class="post-preview">
         <div class="image">
             
-                <img src="../assets/notes-imgs/gRPC.png">
+                <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
             
         </div>
-        <h3 class="title">gRPC Overview</h3>
+        <h3 class="title">笔记模板</h3>
     </a>
 </div>
 
@@ -403,11 +411,11 @@ May 17, 2019
 
         <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;%20/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/%20via%20&#64;twitter_username&hashtags=template,blog,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;gRPC C++ 快速开始文档的学习笔记。&quot;%20/grpc/%20via%20&#64;twitter_username&hashtags=notes,gRPC,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/grpc/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
@@ -418,41 +426,41 @@ May 17, 2019
   <section class="author">
     <div class="details">
       
-        <img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Thiago Rossener">
+        <img class="img-rounded" src="/assets/img/me.jpg" alt="Taten Xu">
       
       <p class="def">Author</p>
       <h3 class="name">
-        <a href="/authors/thiagorossener/">Thiago Rossener</a>
+        <a href="/authors/tatenxu/">Taten Xu</a>
       </h3>
-      <p class="desc">Just a developer.</p>
+      <p class="desc">为艾主席献出心脏！</p>
       <p>
         
-          <a href="https://github.com/thiagorossener" title="Github">
+          <a href="https://github.com/tatenxu" title="Github">
             <svg><use xlink:href="#icon-github"></use></svg>
           </a>
         
         
-          <a href="https://www.facebook.com/thiagorossener" title="Facebook">
+          <a href="https://www.facebook.com/tatenxu" title="Facebook">
             <svg><use xlink:href="#icon-facebook"></use></svg>
           </a>
         
         
-          <a href="https://twitter.com/thiagorossener" title="Twitter">
+          <a href="https://twitter.com/tatenxu" title="Twitter">
             <svg><use xlink:href="#icon-twitter"></use></svg>
           </a>
         
         
-          <a href="https://medium.com/@thiagorossener" title="Medium">
+          <a href="https://medium.com/@tatenxu" title="Medium">
             <svg><use xlink:href="#icon-medium"></use></svg>
           </a>
         
         
-          <a href="https://www.instagram.com/thiagorossener" title="Instagram">
+          <a href="https://www.instagram.com/tatenxu" title="Instagram">
             <svg><use xlink:href="#icon-instagram"></use></svg>
           </a>
         
         
-          <a href="https://www.linkedin.com/in/thiagorossener" title="LinkedIn">
+          <a href="https://www.linkedin.com/in/tatenxu" title="LinkedIn">
             <svg><use xlink:href="#icon-linkedin"></use></svg>
           </a>
         
@@ -472,14 +480,14 @@ May 17, 2019
   {
       "@context": "http://schema.org",
       "@type": "Person",
-      "name": "Thiago Rossener",
+      "name": "Taten Xu",
       
-      "image": "/assets/img/uploads/profile.png",
+      "image": "/assets/img/me.jpg",
       
       "jobTitle": "Chief Editor",
-      "url": "/authors/thiagorossener/",
+      "url": "/authors/tatenxu/",
       "sameAs": [
-        "https://github.com/thiagorossener","https://www.facebook.com/thiagorossener","https://twitter.com/thiagorossener","https://medium.com/@thiagorossener","https://www.instagram.com/thiagorossener","https://www.linkedin.com/in/thiagorossener"
+        "https://github.com/tatenxu","https://www.facebook.com/tatenxu","https://twitter.com/tatenxu","https://medium.com/@tatenxu","https://www.instagram.com/tatenxu","https://www.linkedin.com/in/tatenxu"
       ]
   }
   </script>
@@ -499,7 +507,7 @@ May 17, 2019
         disqus_loaded = true;
         var disqus_shortname = 'disqus_username';
         var disqus_title = '';
-        var disqus_url = '/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/';
+        var disqus_url = '/grpc/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -677,134 +685,142 @@ May 17, 2019
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "笔记模板",
-            "headline": "。。。",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg",
-            "url": "/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/view-all/",
-            "articleBody": "Cas sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+            "name": "gRPC Overview",
+            "headline": "gRPC C++ 快速开始文档的学习笔记。",
+            "description": "gRPC C++ 快速开始文档的学习笔记。",
+            "image": "../assets/notes-imgs/gRPC.png",
+            "url": "/grpc/",
+            "articleBody": "gRPC Guide
+service defination
+
+基于protocal buffers，关键字	service、rpc.
+
+rpc分类：
 
 
-  Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
-
-
-Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-
-Inline HTML elements
-
-HTML defines a long list of available inline tags, a complete list of which can be found on the Mozilla Developer Network.
-
-
-  To bold text, use &amp;lt;strong&amp;gt;.
-  To italicize text, use &amp;lt;em&amp;gt;.
-  Abbreviations, like HTML should use &amp;lt;abbr&amp;gt;, with an optional title attribute for the full phrase.
-  Citations, like — Thiago Rossener, should use &amp;lt;cite&amp;gt;.
-  Deleted text should use &amp;lt;del&amp;gt; and inserted text should use &amp;lt;ins&amp;gt;.
-  Superscript text uses &amp;lt;sup&amp;gt; and subscript text uses &amp;lt;sub&amp;gt;.
-
-
-Most of these elements are styled by browsers with few modifications on our part.
-
-Heading 1
-Heading 2
-Heading 3
-Heading 4
-
-Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-–page-break–
-
-Code
-
-Cum sociis natoque penatibus et magnis dis code element montes, nascetur ridiculus mus.
-
-// Example can be run directly in your JavaScript console
-
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder = new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a + b&quot;);
-
-// Call the function
-adder(2, 6);
-// &amp;gt; 8
-
-
-Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-
-Lists
-
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-
-
-  Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-  Donec id elit non mi porta gravida at eget metus.
-  Nulla vitae elit libero, a pharetra augue.
-
-
-Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
-
-
-  Vestibulum id ligula porta felis euismod semper.
-  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-  Maecenas sed diam eget risus varius blandit sit amet non magna.
-
-
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
-
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-Images
-
-Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
-
-
-
-
-
-Tables
-
-Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-
-  
+  unary RPCs
     
-      Name
-      Upvotes
-      Downvotes
+      server: funcname(ServerContext* context, receiveObj, retObj)
+      client: Status funcname(ServerContext* context, putObj, getObj)
     
   
   
+    Server streaming RPCs
+
     
-      Totals
-      21
-      23
+      
+        server: funcname(ServerContext* context, receeiveObj, ServerWriter)
+      
+      
+        client: ClientReader funcname(ServerContext* context, putObj) follow by reader.read() and end with Status status = reader-&amp;gt;Finish();
+      
     
   
   
+    Client streaming RPC
+
     
-      Alice
-      10
-      11
+      
+        server: funcname(ServerContext* context, ServerReader, retObj)
+      
+      
+        client: ClientWriter funcname(ServerContext* context, getObj) 		follow by writer.write() and end with writer-&amp;gt;WritesDone();
+  Status status = writer-&amp;gt;Finish();
+      
     
+  
+  
+    Bidirectional streaming RPCs
+
     
-      Bob
-      4
-      3
-    
-    
-      Charlie
-      7
-      9
+      
+        server: funcname(ServerContext* context, ServerReaderWriter,)
+      
+      
+        client: ClientReaderWriter funcname(ServerContext* context)
+      
     
   
 
 
-Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+RPC 生命周期
+Deadlines/Timeouts
+
+DEADLINE_EXCEEDED error
+
+RPC termination
+
+server 和 client 独立并本地的决策一个rpc是否完成。
+
+Metadata
+
+metadata是一次rpc调用的相关信息。
+
+Channel
+
+一个channel为一个connection。Channel参数可修改，并且channel是有状态的：connected &amp;amp; idle，一些语言还有额外的quering状态。
+
+gRPC Quick Start
+服务端启动
+
+void RunServer(const std::string&amp;amp; db_path) {
+    std::string server_address(&quot;0.0.0.0:50051&quot;);
+    RouteGuideImpl service(db_path);
+
+    ServerBuilder builder;
+    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+    builder.RegisterService(&amp;amp;service);
+    std::unique_ptr&amp;lt;Server&amp;gt; server(builder.BuildAndStart());
+    std::cout &amp;lt;&amp;lt; &quot;Server listening on &quot; &amp;lt;&amp;lt; server_address &amp;lt;&amp;lt; std::endl;
+    server -&amp;gt; Wait();
+}
+
+
+通过使用ServerBuilder去构建和启动服务器：
+
+
+  创建服务实现类 RouteGuideImpl 的一个实例。
+  创建工厂类 ServerBuilder 的一个实例。
+  在工厂类实例的 AddListeningPort() 方法中指定客户端请求时监听的地址和端口。
+  用工厂类实例注册服务实例。
+  调用工厂类实例的 BuildAndStart() 方法为服务创建和启动一个RPC服务器。
+  调用服务器的 Wait() 方法实现阻塞等待，直到进程被杀死或者 Shutdown() 被调用。
+
+
+客户端
+
+
+  channel
+首先需要创建一个channel（http2的连接？），APIs：
+    
+      grpc::CreateChannel();
+      grpc::CreateCustomChannel()
+      grpc::ChannelArguments
+    
+  
+  
+    stub
+客户端调用server methods需要创建一个stub，API：.proto文件生成代码中的NewStub()方法。
+  
+  RPC调用：
+    
+      创建上下文–ClientContext，不可复用。
+      stub实例远程调用。
+    
+  
+
+
+文档连接
+
+gRPC C++ Basics
+
+gRPC C++ API
 ",
-            "wordcount": "639",
+            "wordcount": "257",
             "inLanguage": "cn",
-            "dateCreated": "2019-05-17/",
-            "datePublished": "2019-05-17/",
-            "dateModified": "2019-05-17/",
+            "dateCreated": "2019-08-30/",
+            "datePublished": "2019-08-30/",
+            "dateModified": "2019-08-30/",
             "author": {
                 "@type": "Person",
                 "name": "Taten Xu",
@@ -829,9 +845,9 @@ Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur e
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "blog",
-            "articleSection": "blog",
-            "keywords": ["template","blog"]
+            "genre": "notes",
+            "articleSection": "notes",
+            "keywords": ["notes","gRPC"]
         }
         </script>
     </body>
