@@ -5,14 +5,14 @@
     <description>use Jekyll template to build such a site on pages.github.com</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Sep 2019 18:22:32 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Sep 2019 18:22:32 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Sep 2019 18:27:39 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Sep 2019 18:27:39 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>gRPC Overview</title>
         <description>&lt;h2 id=&quot;--grpc-guide-&quot;&gt;&lt;font style=&quot;color: #778899&quot;&gt; gRPC Guide &lt;/font&gt;&lt;/h2&gt; &lt;h3 id=&quot;service-defination-&quot;&gt;service defination&lt;/h3&gt; &lt;p&gt;基于protocal buffers，关键字 &lt;code class=&quot;highlighter-rouge&quot;&gt;service&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;rpc&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;rpc分类：&lt;/p&gt; &lt;ol&gt; &lt;li&gt;unary RPCs &lt;ul&gt; &lt;li&gt;server: &lt;code class=&quot;highlighter-rouge&quot;&gt;funcname(ServerContext* context, receiveObj, retObj)&lt;/code&gt;&lt;/li&gt; &lt;li&gt;client: &lt;code class=&quot;highlighter-rouge&quot;&gt;Status funcname(ServerContext* context, putObj, getObj)&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;Server streaming RPCs &lt;ul&gt; &lt;li&gt;server: &lt;code class=&quot;highlighter-rouge&quot;&gt;funcname(ServerContext* context, receeiveObj, ServerWriter)&lt;/code&gt;&lt;/li&gt; &lt;li&gt;client: &lt;code class=&quot;highlighter-rouge&quot;&gt;ClientReader funcname(ServerContext* context, putObj)&lt;/code&gt; follow by &lt;code class=&quot;highlighter-rouge&quot;&gt;reader.read()&lt;/code&gt; and end with &lt;code class=&quot;highlighter-rouge&quot;&gt;Status status = reader-&amp;gt;Finish();&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;Client streaming RPC &lt;ul&gt; &lt;li&gt;server: &lt;code class=&quot;highlighter-rouge&quot;&gt;funcname(ServerContext* context, ServerReader, retObj)&lt;/code&gt;&lt;/li&gt; &lt;li&gt;client: &lt;code class=&quot;highlighter-rouge&quot;&gt;ClientWriter funcname(ServerContext* context, getObj)&lt;/code&gt; follow by &lt;code class=&quot;highlighter-rouge&quot;&gt;writer.write()&lt;/code&gt; and end with &lt;code class=&quot;highlighter-rouge&quot;&gt;writer-&amp;gt;WritesDone(); Status status = writer-&amp;gt;Finish();&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;Bidirectional streaming RPCs &lt;ul&gt;...</description>
-        <pubDate>Fri, 30 Aug 2019 20:48:05 +0800</pubDate>
+        <pubDate>Sun, 01 Sep 2019 20:48:05 +0800</pubDate>
         <link>/grpc/</link>
         <guid isPermaLink="true">/grpc/</guid>
         
