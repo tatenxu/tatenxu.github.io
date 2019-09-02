@@ -202,7 +202,8 @@ August 30, 2019
 
 
 
-                <h2 id="grpc-guide-">gRPC Guide</h2>
+                <h2 id="--grpc-guide-"><font style="color: #778899">  gRPC Guide </font></h2>
+
 <h3 id="service-defination-">service defination</h3>
 
 <p>基于protocal buffers，关键字	<code class="highlighter-rouge">service</code>、<code class="highlighter-rouge">rpc</code>.</p>
@@ -216,41 +217,23 @@ August 30, 2019
       <li>client: <code class="highlighter-rouge">Status funcname(ServerContext* context, putObj, getObj)</code></li>
     </ul>
   </li>
-  <li>
-    <p>Server streaming RPCs</p>
-
+  <li>Server streaming RPCs
     <ul>
-      <li>
-        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, receeiveObj, ServerWriter)</code></p>
-      </li>
-      <li>
-        <p>client: <code class="highlighter-rouge">ClientReader funcname(ServerContext* context, putObj)</code> follow by <code class="highlighter-rouge">reader.read()</code> and end with <code class="highlighter-rouge">Status status = reader-&gt;Finish();</code></p>
-      </li>
+      <li>server: <code class="highlighter-rouge">funcname(ServerContext* context, receeiveObj, ServerWriter)</code></li>
+      <li>client: <code class="highlighter-rouge">ClientReader funcname(ServerContext* context, putObj)</code> follow by <code class="highlighter-rouge">reader.read()</code> and end with <code class="highlighter-rouge">Status status = reader-&gt;Finish();</code></li>
     </ul>
   </li>
-  <li>
-    <p>Client streaming RPC</p>
-
+  <li>Client streaming RPC
     <ul>
-      <li>
-        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReader, retObj)</code></p>
-      </li>
-      <li>
-        <p>client: <code class="highlighter-rouge">ClientWriter funcname(ServerContext* context, getObj)</code> 		follow by <code class="highlighter-rouge">writer.write()</code> and end with <code class="highlighter-rouge">writer-&gt;WritesDone();
-  Status status = writer-&gt;Finish();</code></p>
-      </li>
+      <li>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReader, retObj)</code></li>
+      <li>client: <code class="highlighter-rouge">ClientWriter funcname(ServerContext* context, getObj)</code> 		follow by <code class="highlighter-rouge">writer.write()</code> and end with <code class="highlighter-rouge">writer-&gt;WritesDone();
+  Status status = writer-&gt;Finish();</code></li>
     </ul>
   </li>
-  <li>
-    <p>Bidirectional streaming RPCs</p>
-
+  <li>Bidirectional streaming RPCs
     <ul>
-      <li>
-        <p>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReaderWriter,)</code></p>
-      </li>
-      <li>
-        <p>client: <code class="highlighter-rouge">ClientReaderWriter funcname(ServerContext* context)</code></p>
-      </li>
+      <li>server: <code class="highlighter-rouge">funcname(ServerContext* context, ServerReaderWriter,)</code></li>
+      <li>client: <code class="highlighter-rouge">ClientReaderWriter funcname(ServerContext* context)</code></li>
     </ul>
   </li>
 </ol>
@@ -270,9 +253,10 @@ August 30, 2019
 
 <h3 id="channel-">Channel</h3>
 
-<p>一个channel为一个connection。Channel参数可修改，并且channel是有状态的：<code class="highlighter-rouge">connected</code> &amp; <code class="highlighter-rouge">idle</code>，一些语言还有额外的<code class="highlighter-rouge">quering</code>状态。</p>
+<p>一个channel 为一个connection。Channel参数可修改，并且channel是有状态的：<code class="highlighter-rouge">connected</code> &amp; <code class="highlighter-rouge">idle</code>，一些语言还有额外的<code class="highlighter-rouge">quering</code>状态。</p>
 
-<h2 id="grpc-quick-start-">gRPC Quick Start</h2>
+<h2 id="-grpc-quick-start--"><font style="color: #778899"> gRPC Quick Start  </font></h2>
+
 <h3 id="服务端启动-">服务端启动</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void RunServer(const std::string&amp; db_path) {
@@ -360,11 +344,11 @@ August 30, 2019
                             </li>
                         
                             <li>
-                                <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/">
+                                <a href="/protobuf/">
                                     
-                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
+                                        <img src="../assets/notes-imgs/pb.png">
                                     
-                                    <h3>笔记模板</h3>
+                                    <h3>Protocal Buffers Overview</h3>
                                 </a>
                             </li>
                         
@@ -690,7 +674,8 @@ August 30, 2019
             "description": "gRPC C++ 快速开始文档的学习笔记。",
             "image": "../assets/notes-imgs/gRPC.png",
             "url": "/grpc/",
-            "articleBody": "gRPC Guide
+            "articleBody": "  gRPC Guide 
+
 service defination
 
 基于protocal buffers，关键字	service、rpc.
@@ -704,41 +689,23 @@ rpc分类：
       client: Status funcname(ServerContext* context, putObj, getObj)
     
   
-  
-    Server streaming RPCs
-
+  Server streaming RPCs
     
-      
-        server: funcname(ServerContext* context, receeiveObj, ServerWriter)
-      
-      
-        client: ClientReader funcname(ServerContext* context, putObj) follow by reader.read() and end with Status status = reader-&amp;gt;Finish();
-      
+      server: funcname(ServerContext* context, receeiveObj, ServerWriter)
+      client: ClientReader funcname(ServerContext* context, putObj) follow by reader.read() and end with Status status = reader-&amp;gt;Finish();
     
   
-  
-    Client streaming RPC
-
+  Client streaming RPC
     
-      
-        server: funcname(ServerContext* context, ServerReader, retObj)
-      
-      
-        client: ClientWriter funcname(ServerContext* context, getObj) 		follow by writer.write() and end with writer-&amp;gt;WritesDone();
+      server: funcname(ServerContext* context, ServerReader, retObj)
+      client: ClientWriter funcname(ServerContext* context, getObj) 		follow by writer.write() and end with writer-&amp;gt;WritesDone();
   Status status = writer-&amp;gt;Finish();
-      
     
   
-  
-    Bidirectional streaming RPCs
-
+  Bidirectional streaming RPCs
     
-      
-        server: funcname(ServerContext* context, ServerReaderWriter,)
-      
-      
-        client: ClientReaderWriter funcname(ServerContext* context)
-      
+      server: funcname(ServerContext* context, ServerReaderWriter,)
+      client: ClientReaderWriter funcname(ServerContext* context)
     
   
 
@@ -758,9 +725,10 @@ metadata是一次rpc调用的相关信息。
 
 Channel
 
-一个channel为一个connection。Channel参数可修改，并且channel是有状态的：connected &amp;amp; idle，一些语言还有额外的quering状态。
+一个channel 为一个connection。Channel参数可修改，并且channel是有状态的：connected &amp;amp; idle，一些语言还有额外的quering状态。
 
-gRPC Quick Start
+ gRPC Quick Start  
+
 服务端启动
 
 void RunServer(const std::string&amp;amp; db_path) {
@@ -816,7 +784,7 @@ gRPC C++ Basics
 
 gRPC C++ API
 ",
-            "wordcount": "255",
+            "wordcount": "249",
             "inLanguage": "cn",
             "dateCreated": "2019-08-30/",
             "datePublished": "2019-08-30/",
