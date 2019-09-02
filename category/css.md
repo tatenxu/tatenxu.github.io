@@ -1,6 +1,6 @@
 ---
 layout: category
-title: CSS
-slug: css
+title: NOTES
+slug: notes
 description: A category for CSS related posts.
 ---

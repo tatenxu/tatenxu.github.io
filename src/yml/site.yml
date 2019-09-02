@@ -1,12 +1,12 @@
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by Thiago Rossener.
+name: JJW
+title: JJW | 's 学习笔记
+description: use Jekyll template to build such a site on pages.github.com
 tags:
   - blog
   - template
   - jekyll
   - theme
   - netlify
-email: youremail@xyz.com
+email: tatenxu@gmail.com
 disqus_username: disqus_username
 show_hero: true
