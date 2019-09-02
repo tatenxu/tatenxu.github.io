@@ -12,8 +12,16 @@
     {
       "title"    : "Some Colors with RGB Value",
       "tags"     : "tips and RGB",
-      "categories" : "notes",
+      "categories" : "tips",
       "url"      : "/colors/",
+      "date"     : "08/30/2019"
+    } ,
+  
+    {
+      "title"    : "VIM 使用tips",
+      "tags"     : "tips and VIM",
+      "categories" : "tips",
+      "url"      : "/vim/",
       "date"     : "08/30/2019"
     } ,
   

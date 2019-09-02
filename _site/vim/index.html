@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>VIM 使用tips | JJW</title>
+    <meta name="description" content="转载文章，方便查阅。">
+    
+        <meta name="keywords" content="tips, VIM">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VIM 使用tips | JJW">
+    <meta name="twitter:description" content="转载文章，方便查阅。">
+    <meta property="twitter:image:src" content="../assets/notes-imgs/vim.png">
+    
+        <meta name="twitter:site" content="@twitter_username">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="/vim/">
+    <meta property="og:title" content="VIM 使用tips | JJW">
+    <meta property="og:image" content="../assets/notes-imgs/vim.png">
+    <meta property="og:description" content="转载文章，方便查阅。">
+    <meta property="og:site_name" content="JJW | 's 学习笔记">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="JJW">
+    <meta name="msapplication-TileColor" content="#ff0a16">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#ff0a16">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="canonical" href="/vim/">
+    <link rel="alternate" type="application/rss+xml" title="JJW | 's 学习笔记" href="/feed.xml" />
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            JJW  
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+    <!-- <a href="https://github.com/thiagorossener/jekflix-template" class="get-theme" role="button">
+        Get this theme!
+    </a> -->
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a href="/about/">About</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/staff/">Staff</a>
+      </li>
+    
+  
+    
+  
+    
+  
+  
+    <li>
+      <a href="/contact/">Contact</a>
+    </li>
+  
+  <li>
+    <a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a>
+  </li>
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2019-08-30T18:48:05+08:00">
+                            
+
+
+August 30, 2019
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>2 min to read</span>
+                </p>
+                <h1 class="post-title">VIM 使用tips</h1>
+                <p class="post-subtitle">VIM快捷键</p>
+
+                
+                    <img src="../assets/notes-imgs/vim.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <blockquote>
+  <p>📌转载自<strong><a href="https://hualong1009.github.io">@hualong1009</a></strong></p>
+</blockquote>
+
+<h1 id="前言">前言</h1>
+
+<p>这个库是用Xmind做的VIM编辑器的用法思维导图。里面包含一些不常用的用法，但是感觉可以很大的提高编辑效率。</p>
+
+<h1 id="vim用法">VIM用法</h1>
+
+<p>VIM编辑器的用法，包含基础用法和高级用法。
+VIM的配置文件是用户家目录下.vimrc, 例如通过修改该文件加入inoremap jj &lt;Esc&gt;, 从而映射ESC键到两次j键，可以提高操作效率</p>
+
+<h1 id="思维导图">思维导图</h1>
+
+<p><a href="https://tatenxu.github.io/assets/files/vim.xmind">xmind文件</a></p>
+
+<h2 id="normalmode">Normal-mode</h2>
+
+<p>用于浏览文件，也包含复制，粘贴，删除等操作。这种模式下，键盘按键会当做功能键处理，不会真正的键入这些字符</p>
+
+<h3 id="漫游">漫游</h3>
+
+<ul>
+  <li>h 向左</li>
+  <li>j 向下</li>
+  <li>k 向上</li>
+  <li>l 向右</li>
+  <li>0 跳到行首</li>
+  <li>^ 跳到行首第一个非空字符</li>
+  <li>$ 跳到行尾</li>
+  <li>gg 跳到文件的第一行的行首</li>
+  <li>G 快速到文件的最后一行的行尾</li>
+  <li>% 匹配括号移动，包括(,{,[</li>
+  <li>* | # 匹配光标当前所在的单词，移动光标到下一个单词处，*是下一个，#是上一个</li>
+  <li>ctrl+f 查看下一页内容</li>
+  <li>ctrl+b 查看上一页内容</li>
+  <li>100G 跳转到第一百行的行首</li>
+</ul>
+
+<h3 id="复制">复制</h3>
+
+<ul>
+  <li>yy 复制光标所在整行</li>
+  <li>100yy 复制光标坐在行及以下共100行</li>
+  <li>yw 复制光标开始的第一个单词</li>
+  <li>y$  复制光标到行尾</li>
+  <li>yG 复制光标所在行到文本的结束</li>
+  <li>yH 复制文本开始到光标所在行的文本</li>
+  <li>fa 移动光标到本行下一个a的字符处</li>
+  <li>Fa 反前移动光标到字符a处</li>
+  <li>nfa 移动光标到下第n个字符a处</li>
+  <li>nFa 向前移动光标到第n个字符a处</li>
+  <li>ta 移动光标到a字符的前一个字符</li>
+  <li>nta 移动光标到第n个a字符前一个字符</li>
+  <li>Ta 向前移动光标到a字符出现的后一个字符</li>
+  <li>nTa 向前移动到第n个a字符出现后的一个字符</li>
+  <li>yfB 复制光标到第一个大写B中间的内容</li>
+  <li>y2fB 复制光标到第二个大写B中间的内容</li>
+</ul>
+
+<h3 id="剪切">剪切</h3>
+
+<ul>
+  <li>x 向后剪切一个字符，如果是行尾则向前剪切</li>
+  <li>3x 剪切三个</li>
+  <li>xp 非行尾交换两个字符，如果是bs编程sb</li>
+</ul>
+
+<h3 id="删除">删除</h3>
+
+<ul>
+  <li>dd 删除光标所在行</li>
+  <li>200dd 删除光标所在行及以下共100行</li>
+  <li>dw 删除一个单词</li>
+  <li>dnw 删除n个单词</li>
+  <li>df” 删除到出现第一个双引号的位置</li>
+  <li>dnf” 删除到出现第n个双引号的位置</li>
+  <li>d$ 删除光标到本行的结尾</li>
+  <li>d^ 删除光标到本行的开头</li>
+  <li>dH 删除文本开始到光标所在行的文本</li>
+  <li>dG 删除光标所在行到文本的结束</li>
+</ul>
+
+<h3 id="粘贴">粘贴</h3>
+
+<ul>
+  <li>p 粘贴复制或剪切的内容</li>
+  <li>3p 将复制或剪切的内容粘贴三次</li>
+  <li>P 光标前开始粘贴</li>
+  <li>3P 光标前开始粘贴3次</li>
+</ul>
+
+<h3 id="窗口命令">窗口命令</h3>
+
+<ul>
+  <li>ctrl+w s 水平分割窗口</li>
+  <li>ctrl+w w 切换窗口</li>
+  <li>ctrl+w q 关闭当前分屏，如果是最后一个分屏则退出VIM</li>
+  <li>ctrl+w c 关闭当前分屏</li>
+  <li>ctrl+w v 垂直分割窗口</li>
+  <li>ctrl+j | k 可以用于切换上下窗口</li>
+  <li>ctrl+h | l 可以用于切换s水平窗口</li>
+  <li>ctrl+w H | L 可以用于左右移动当前分屏</li>
+  <li>ctrl+w J | K 可以上下移动当前分屏</li>
+</ul>
+
+<h3 id="文件保存">文件保存</h3>
+
+<ul>
+  <li>ZZ 大写的字母ZZ，保存当前文件</li>
+  <li>ZQ 大写的字母ZQ, 放弃对文件的修改并退出</li>
+</ul>
+
+<h3 id="关键字和路径补全">关键字和路径补全</h3>
+
+<ul>
+  <li>ctrl+x -&gt; ctrl+n  透过目前正在编辑的文件内容作为关键库补全</li>
+  <li>ctrl+n 也可以快速补全，没有提示</li>
+  <li>ctrl+x -&gt; ctrl+f 以当前目录内的档案作为关键字补全路径文件</li>
+  <li>ctrl+x -&gt; ctrl+o 以文件名作为语法补充，以wim内建的关键字予以补全</li>
+</ul>
+
+<h3 id="撤销操作和恢复">撤销操作和恢复</h3>
+
+<ul>
+  <li>u 撤销刚才的操作</li>
+  <li>ctrl+r 恢复撤销操作</li>
+</ul>
+
+<h3 id="删除字符和替换">删除字符和替换</h3>
+
+<ul>
+  <li>x 删除光标当前所在的字符</li>
+  <li>r 替换掉光标当前所在的字符</li>
+  <li>R 替换掉从光标开始以后的所有字符，除非&lt;ESC&gt;退出</li>
+</ul>
+
+<h3 id="大小写转换">大小写转换</h3>
+
+<ul>
+  <li>~ 将光标下的字母改变大小写</li>
+  <li>3~ 将光标位置开始的3个字母改变其大小写</li>
+  <li>g~~ 改变当前行字母的大小写</li>
+  <li>gUU 将当前行的字母改成大写</li>
+  <li>guu 将当前行的字母改成小写</li>
+  <li>3gUU 将从光标所在行下面共三行字母改成大写</li>
+  <li>gUw 将光标下的单词改成大写</li>
+  <li>guw 将光标下的单词改成小写</li>
+</ul>
+
+<h3 id="宏录制以及播放">宏录制以及播放</h3>
+
+<ul>
+  <li>录制宏，在普通模式按下q键(宏录制是以q键启动的)，再按下字母w(字母随意)，表示该宏注册为w, 然后完成操作后再次按下q表示完成录制操作。</li>
+  <li>宏播放， 在正常模式下，按下@w执行宏录制的所有操作。@@是对上次宏的重复操作。n@w, 就会执行n次w宏。</li>
+</ul>
+
+<h2 id="commandmode">Command-mode</h2>
+
+<p>在正常模式下按下”:”(冒号)键或者/(撇号)，进入命令模式，可以输入和执行一些VIM或者插件命令，这些指令包含设置环境，文件操作，调用某个功能</p>
+
+<h3 id="ssth-行尾追加sth">:%s/$/sth/ 行尾追加sth</h3>
+<h3 id="smg-替换掉dos换行符m使用ctrlventer即可输入">:%s/\^M//g 替换掉dos换行符，^M使用Ctrl+v+Enter即可输入</h3>
+<h3 id="gsd-删除空行以及只有空格的行">:g/\^/s*$/d 删除空行以及只有空格的行</h3>
+<h3 id="n1n2-sstr1str2gic-替换行号n1到n2之间的字符串str1为str2-g关键字表示一行出现多个则都替换如果没有g则只替换第一个i关键字表示大小写不敏感即忽略大小写大写的字母i表示大小写敏感这也是默认的c关键字表示替换前确认每个关键词均可单独使用">:n1,n2 s/str1/str2/gic 替换行号n1到n2之间的字符串str1为str2, g关键字表示一行出现多个，则都替换，如果没有g，则只替换第一个，i关键字表示大小写不敏感，即忽略大小写，大写的字母I表示大小写敏感，这也是默认的。c关键字表示替换前确认。每个关键词均可单独使用</h3>
+<h3 id="sg-删除之后的字符">:%s/#.*//g 删除#之后的字符</h3>
+
+<h3 id="hansen-查找字符串hansen-n查找下一个匹配-n查找上一个匹配2n查找下面第二个匹配">/hansen 查找字符串hansen, n查找下一个匹配， N查找上一个匹配，2n查找下面第二个匹配</h3>
+<h3 id="help-set-查看set命令的帮助信息">:help set 查看set命令的帮助信息</h3>
+<h3 id="set-显示与系统预设值不同的设定参数就是自己修改的那些设定">:set 显示与系统预设值不同的设定参数，就是自己修改的那些设定</h3>
+<h3 id="syntax-onoff-打开和关闭程序的语法高亮">:syntax on|off 打开和关闭程序的语法高亮</h3>
+<h3 id="set-bgdarklight-设置不同的背景色">:set bg=dark|light 设置不同的背景色</h3>
+<h3 id="文件操作">文件操作</h3>
+
+<ul>
+  <li>:w 将编辑的内容写入文件中</li>
+  <li>:w! 将文件在只读状态时强制写入，实际写入还得看文档权限</li>
+  <li>:q 离开vim</li>
+  <li>:qa! 退出所有文件，对所有文件不做修改保存</li>
+  <li>:x 退出文件并保存对文件的修改</li>
+  <li>
+    <p>:e fn 打开另外一个文件</p>
+
+    <ul>
+      <li>:n 跳转到下一个文件</li>
+      <li>:N 跳转到上一个文件</li>
+      <li>:bn 跳转到下一个文件</li>
+      <li>:bp 跳转到上一个文件</li>
+      <li>:ls 列出打开的所有文件</li>
+      <li>:b2 显示第二个文件</li>
+    </ul>
+  </li>
+  <li>:q! 将至退出修改过的文件，丢掉所有修改</li>
+  <li>:wq 存储后退出</li>
+  <li>:w fn 将文件另存为文件名fn</li>
+  <li>:r fn 将fn文件读入并追加到目前编辑文件光标后</li>
+  <li>:n1, n2 w fn 将n1到n2的内容存储成fn文件</li>
+  <li>:n1,n2 d 将n1到n2行的所有内容删除，d是删除关键字</li>
+  <li>:! command 显示离开编辑器并执行command命令</li>
+  <li>:r! command 执行command命令，并将执行结果追加到光标后</li>
+  <li>:sp fn1 上下分屏打开另外一个文件</li>
+  <li>:vsp fn1 左右分屏打开另外一个文件</li>
+</ul>
+
+<h3 id="set-nu-开启显示行号">:set nu 开启显示行号</h3>
+<h3 id="set-hlsearch-搜索到的关键字高亮">:set hlsearch 搜索到的关键字高亮</h3>
+<h3 id="set-autoindent-开启自动缩进">:set autoindent 开启自动缩进</h3>
+<h3 id="set-backup-是否自动存储档案当开启后每次打开文件编辑的时候原始文件会命名为fn">:set backup 是否自动存储档案，当开启后，每次打开文件编辑的时候，原始文件会命名为fn~</h3>
+<h3 id="set-ruler-打开后关闭右下角的状态栏说明">:set ruler 打开后关闭右下角的状态栏说明</h3>
+<h3 id="set-ic-在关键词搜索的时候区分大小写">:set ic 在关键词搜索的时候区分大小写</h3>
+<h3 id="set-showmode-打开和关闭模式切换后的状态比如进入insert-mode的时候左下角会显示insert">:set showmode 打开和关闭模式切换后的状态，比如进入insert mode的时候，左下角会显示–INSERT–</h3>
+<h3 id="set-backspace012-进入编辑模式可以利用backspace来按键来删除任意字符但是某些distribution则不容许这样此时可以通过设置backspace来实现这个功能2就是删除任何字符01时仅可以删除输入的字符而无法删除原来文本存在的字符">:set backspace=(012)  进入编辑模式，可以利用backspace来按键来删除任意字符，但是某些distribution则不容许这样。此时可以通过设置backspace来实现这个功能，=2，就是删除任何字符，=0|1时，仅可以删除输入的字符，而无法删除原来文本存在的字符</h3>
+<h3 id="tabe-fn-使用vim插件minibuffer新建标签页功能在一个新的标签页编辑文件fn">tabe fn 使用VIM插件minibuffer新建标签页功能,在一个新的标签页编辑文件fn,</h3>
+
+<ul>
+  <li>gt 切换到下一个标签页</li>
+  <li>gT 切换到上一个标签页</li>
+  <li>:tabr 切换到第一个标签页</li>
+  <li>:tabl 切换到最后一个标签页</li>
+  <li>:tabm [N]  把当前tab移动到第N个tab之后</li>
+</ul>
+
+<h3 id="map-m-iesc-设置快捷键ctrlm在光标处所在行的行首插入代表注释然后在退出编辑状态map是关键字后面的是key和valuekey对应的是m这个key是快捷键ctrlvm输入的代表快捷键ctrlmvalue对应的是iesc-表示依次执行这些快捷键i表示切换光标至行首并进入编辑状态表示输入esc表示退出编辑状态">:map ^M I#&lt;ESC&gt; 设置快捷键Ctrl+m在光标处所在行的行首插入#(#代表注释)，然后在退出编辑状态。map是关键字，后面的是key和value。key对应的是^M,这个key是快捷键Ctrl+v+M输入的，代表快捷键Ctrl+M。Value对应的是I#&lt;ESC&gt;, 表示依次执行这些快捷键。I表示切换光标至行首并进入编辑状态，#表示输入#，&lt;ESC&gt;表示退出编辑状态。</h3>
+
+<h3 id="ab-email-hualong1009foxmailcom-ab是关键词该命令执行后然后切换到编辑模式输入email后会把email自动替换为邮件地址hualong1009foxmailcom适用于频繁输入同样的长字符串场景">:ab email hualong1009@foxmail.com  ab是关键词，该命令执行后，然后切换到编辑模式，输入email后，会把email自动替换为邮件地址hualong1009@foxmail.com。适用于频繁输入同样的长字符串场景</h3>
+<h2 id="insertmode">Insert-mode</h2>
+
+<p>在正常模式按下一些按键(如i, a等)进入插入模式
+i 从当前光标的位置进入插入模式
+I 进入插入模式，并将光标至于行首
+a 追加模式，置光标于当前光标之后
+A 追加模式，置光标于行末
+o 在当前行之下新加一行，并进入插入模式
+O 在当前行之前新加一行，并进入插入模式
+ESC 退出插入模式</p>
+
+<h2 id="visualmode">Visual-mode</h2>
+
+<p>可视化模式
+按下v,V,&lt;CTRL&gt;+V, 可以进入可视化模式，操作像是拿鼠标选择一样，操作会很方便。
+继续按下CTRL+v会退出可视化模式</p>
+
+<h3 id="使用方向键或者hjkl进行漫游选中相应的内容也可以使用gg和g直接到文件首或尾">使用方向键或者h,j,k,l进行漫游，选中相应的内容，也可以使用gg和G直接到文件首或尾</h3>
+<h3 id="ctrlv-块模式块操作和ue的块操作一样">ctrl+v 块模式，块操作，和UE的块操作一样</h3>
+<h3 id="o-跳转光标到选中块的另一个端点">o 跳转光标到选中块的另一个端点</h3>
+<h3 id="u-将选中块中的内容转化为大写">U 将选中块中的内容转化为大写</h3>
+<h3 id="o-跳转光标到块的另一个端点">O 跳转光标到块的另一个端点</h3>
+<h3 id="aw-选中一个字">aw 选中一个字</h3>
+<h3 id="ab-选中括号中的所有内容包含括号本身">ab 选中{}括号中的所有内容，包含括号本身</h3>
+<h3 id="ab-选中括号中的所有内容">aB 选中{}括号中的所有内容</h3>
+<h3 id="ib-选中括号中的内容不包含括号">ib 选中括号中的内容，不包含括号</h3>
+<h3 id="ib-选中括号中的所有内容">iB 选中括号中的所有内容</h3>
+<h3 id="va-当光标在当中时候va表示选中内所有的内容包含双引号">va 当光标在””,’’,(),{},[]当中时候，va表示选中”“内所有的内容包含双引号</h3>
+<h3 id="vi-当光标在当中时候va表示选中内所有的内容不包含双引号">vi 当光标在””,’’,(),{},[]当中时候，va表示选中”“内所有的内容不包含双引号</h3>
+<h3 id="-块右移">&gt; 块右移</h3>
+<h3 id="-块左移">&lt; 块左移</h3>
+<h3 id="y-复制块">y 复制块</h3>
+<h3 id="d-删除块">d 删除块</h3>
+<h3 id="～-切换块中内容的大小写">～ 切换块中内容的大小写</h3>
+<h3 id="在该模式下选择区域后直接输入-vim会自动补全为-这个是可视模式下选区的替换操作表示操作范围类似与制定n1-n2">在该模式下选择区域后直接输入:, VIM会自动补全为:’&lt;,’&gt; 这个是可视模式下选区的替换操作，表示操作范围，类似与制定n1, n2</h3>
+<h2 id="vim编辑文本">vim编辑文本</h2>
+<h3 id="vim-file-编辑一个文件">vim file 编辑一个文件</h3>
+<h3 id="vim-fn1-fn2-同时编辑多个文件默认只显示第一个文件也就是file1">vim fn1 fn2 … 同时编辑多个文件，默认只显示第一个文件，也就是file1</h3>
+<h3 id="vim-on-fn1-fn2-上下分屏同时编辑多个文件">vim -on fn1 fn2 … 上下分屏同时编辑多个文件</h3>
+<h3 id="vim-on-fn1-fn2-左右分屏打开多个文件">vim -On fn1 fn2 … 左右分屏打开多个文件</h3>
+
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/protobuf/">
+                                    
+                                        <img src="../assets/notes-imgs/pb.png">
+                                    
+                                    <h3>Protocal Buffers Overview</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/">
+                                    
+                                        <img src="https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg">
+                                    
+                                    <h3>笔记模板</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/colors/">
+                                    
+                                        <img src="../assets/notes-imgs/colors.png">
+                                    
+                                    <h3>Some Colors with RGB Value</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="2">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <a href="javascript:void(0);">Go back to top</a>
+    </div>
+    
+    <a href="/colors/" class="post-preview">
+        <div class="image">
+            
+                <img src="../assets/notes-imgs/colors.png">
+            
+        </div>
+        <h3 class="title">Some Colors with RGB Value</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;转载文章，方便查阅。&quot;%20/vim/%20via%20&#64;twitter_username&hashtags=tips,VIM,"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/vim/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+</section>
+
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/me.jpg" alt="Taten Xu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/tatenxu/">Taten Xu</a>
+      </h3>
+      <p class="desc">为艾主席献出心脏！</p>
+      <p>
+        
+          <a href="https://github.com/tatenxu" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.facebook.com/tatenxu" title="Facebook">
+            <svg><use xlink:href="#icon-facebook"></use></svg>
+          </a>
+        
+        
+          <a href="https://twitter.com/tatenxu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@tatenxu" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/tatenxu" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/tatenxu" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Taten Xu",
+      
+      "image": "/assets/img/me.jpg",
+      
+      "jobTitle": "Chief Editor",
+      "url": "/authors/tatenxu/",
+      "sameAs": [
+        "https://github.com/tatenxu","https://www.facebook.com/tatenxu","https://twitter.com/tatenxu","https://medium.com/@tatenxu","https://www.instagram.com/tatenxu","https://www.linkedin.com/in/tatenxu"
+      ]
+  }
+  </script>
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'disqus_username';
+        var disqus_title = '';
+        var disqus_url = '/vim/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+    <p>
+      
+        <a href="https://github.com/tatenxu" title="Github">
+          <svg><use xlink:href="#icon-github"></use></svg>
+        </a>
+      
+      
+        <a href="https://www.facebook.com/facebook_username" title="Facebook">
+          <svg><use xlink:href="#icon-facebook"></use></svg>
+        </a>
+      
+      
+        <a href="https://twitter.com/twitter_username" title="Twitter">
+          <svg><use xlink:href="#icon-twitter"></use></svg>
+        </a>
+      
+      
+        <a href="https://medium.com/@medium_username" title="Medium">
+          <svg><use xlink:href="#icon-medium"></use></svg>
+        </a>
+      
+      
+        <a href="https://www.instagram.com/instagram_username" title="Instagram">
+          <svg><use xlink:href="#icon-instagram"></use></svg>
+        </a>
+      
+      
+        <a href="https://www.linkedin.com/in/linkedin_username" title="LinkedIn">
+          <svg><use xlink:href="#icon-linkedin"></use></svg>
+        </a>
+      
+    </p>
+
+    <ul>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  
+    
+  
+    
+      <li>
+        <a href="/about/">About</a>
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <a href="/staff/">Staff</a>
+      </li>
+    
+  
+    
+  
+    
+  
+  
+    <li>
+      <a href="/contact/">Contact</a>
+    </li>
+  
+  <li>
+    <a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a>
+  </li>
+</ul>
+
+
+    <p>
+      Theme was made  by <a href="https://rossener.com" target="_blank" class="creator"><span>Jekflix</span></a>
+    </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "JJW",
+  "description": "use Jekyll template to build such a site on pages.github.com",
+  "url": "/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/tatenxu","https://www.facebook.com/facebook_username","https://twitter.com/twitter_username","https://medium.com/@medium_username","https://www.instagram.com/instagram_username","https://www.linkedin.com/in/linkedin_username"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXXXXX-X', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  
+
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "VIM 使用tips",
+            "headline": "VIM快捷键",
+            "description": "转载文章，方便查阅。",
+            "image": "../assets/notes-imgs/vim.png",
+            "url": "/vim/",
+            "articleBody": "
+  📌转载自@hualong1009
+
+
+前言
+
+这个库是用Xmind做的VIM编辑器的用法思维导图。里面包含一些不常用的用法，但是感觉可以很大的提高编辑效率。
+
+VIM用法
+
+VIM编辑器的用法，包含基础用法和高级用法。
+VIM的配置文件是用户家目录下.vimrc, 例如通过修改该文件加入inoremap jj &amp;lt;Esc&amp;gt;, 从而映射ESC键到两次j键，可以提高操作效率
+
+思维导图
+
+xmind文件
+
+Normal-mode
+
+用于浏览文件，也包含复制，粘贴，删除等操作。这种模式下，键盘按键会当做功能键处理，不会真正的键入这些字符
+
+漫游
+
+
+  h 向左
+  j 向下
+  k 向上
+  l 向右
+  0 跳到行首
+  ^ 跳到行首第一个非空字符
+  $ 跳到行尾
+  gg 跳到文件的第一行的行首
+  G 快速到文件的最后一行的行尾
+  % 匹配括号移动，包括(,{,[
+  * | # 匹配光标当前所在的单词，移动光标到下一个单词处，*是下一个，#是上一个
+  ctrl+f 查看下一页内容
+  ctrl+b 查看上一页内容
+  100G 跳转到第一百行的行首
+
+
+复制
+
+
+  yy 复制光标所在整行
+  100yy 复制光标坐在行及以下共100行
+  yw 复制光标开始的第一个单词
+  y$  复制光标到行尾
+  yG 复制光标所在行到文本的结束
+  yH 复制文本开始到光标所在行的文本
+  fa 移动光标到本行下一个a的字符处
+  Fa 反前移动光标到字符a处
+  nfa 移动光标到下第n个字符a处
+  nFa 向前移动光标到第n个字符a处
+  ta 移动光标到a字符的前一个字符
+  nta 移动光标到第n个a字符前一个字符
+  Ta 向前移动光标到a字符出现的后一个字符
+  nTa 向前移动到第n个a字符出现后的一个字符
+  yfB 复制光标到第一个大写B中间的内容
+  y2fB 复制光标到第二个大写B中间的内容
+
+
+剪切
+
+
+  x 向后剪切一个字符，如果是行尾则向前剪切
+  3x 剪切三个
+  xp 非行尾交换两个字符，如果是bs编程sb
+
+
+删除
+
+
+  dd 删除光标所在行
+  200dd 删除光标所在行及以下共100行
+  dw 删除一个单词
+  dnw 删除n个单词
+  df” 删除到出现第一个双引号的位置
+  dnf” 删除到出现第n个双引号的位置
+  d$ 删除光标到本行的结尾
+  d^ 删除光标到本行的开头
+  dH 删除文本开始到光标所在行的文本
+  dG 删除光标所在行到文本的结束
+
+
+粘贴
+
+
+  p 粘贴复制或剪切的内容
+  3p 将复制或剪切的内容粘贴三次
+  P 光标前开始粘贴
+  3P 光标前开始粘贴3次
+
+
+窗口命令
+
+
+  ctrl+w s 水平分割窗口
+  ctrl+w w 切换窗口
+  ctrl+w q 关闭当前分屏，如果是最后一个分屏则退出VIM
+  ctrl+w c 关闭当前分屏
+  ctrl+w v 垂直分割窗口
+  ctrl+j | k 可以用于切换上下窗口
+  ctrl+h | l 可以用于切换s水平窗口
+  ctrl+w H | L 可以用于左右移动当前分屏
+  ctrl+w J | K 可以上下移动当前分屏
+
+
+文件保存
+
+
+  ZZ 大写的字母ZZ，保存当前文件
+  ZQ 大写的字母ZQ, 放弃对文件的修改并退出
+
+
+关键字和路径补全
+
+
+  ctrl+x -&amp;gt; ctrl+n  透过目前正在编辑的文件内容作为关键库补全
+  ctrl+n 也可以快速补全，没有提示
+  ctrl+x -&amp;gt; ctrl+f 以当前目录内的档案作为关键字补全路径文件
+  ctrl+x -&amp;gt; ctrl+o 以文件名作为语法补充，以wim内建的关键字予以补全
+
+
+撤销操作和恢复
+
+
+  u 撤销刚才的操作
+  ctrl+r 恢复撤销操作
+
+
+删除字符和替换
+
+
+  x 删除光标当前所在的字符
+  r 替换掉光标当前所在的字符
+  R 替换掉从光标开始以后的所有字符，除非&amp;lt;ESC&amp;gt;退出
+
+
+大小写转换
+
+
+  ~ 将光标下的字母改变大小写
+  3~ 将光标位置开始的3个字母改变其大小写
+  g~~ 改变当前行字母的大小写
+  gUU 将当前行的字母改成大写
+  guu 将当前行的字母改成小写
+  3gUU 将从光标所在行下面共三行字母改成大写
+  gUw 将光标下的单词改成大写
+  guw 将光标下的单词改成小写
+
+
+宏录制以及播放
+
+
+  录制宏，在普通模式按下q键(宏录制是以q键启动的)，再按下字母w(字母随意)，表示该宏注册为w, 然后完成操作后再次按下q表示完成录制操作。
+  宏播放， 在正常模式下，按下@w执行宏录制的所有操作。@@是对上次宏的重复操作。n@w, 就会执行n次w宏。
+
+
+Command-mode
+
+在正常模式下按下”:”(冒号)键或者/(撇号)，进入命令模式，可以输入和执行一些VIM或者插件命令，这些指令包含设置环境，文件操作，调用某个功能
+
+:%s/$/sth/ 行尾追加sth
+:%s/\^M//g 替换掉dos换行符，^M使用Ctrl+v+Enter即可输入
+:g/\^/s*$/d 删除空行以及只有空格的行
+:n1,n2 s/str1/str2/gic 替换行号n1到n2之间的字符串str1为str2, g关键字表示一行出现多个，则都替换，如果没有g，则只替换第一个，i关键字表示大小写不敏感，即忽略大小写，大写的字母I表示大小写敏感，这也是默认的。c关键字表示替换前确认。每个关键词均可单独使用
+:%s/#.*//g 删除#之后的字符
+
+/hansen 查找字符串hansen, n查找下一个匹配， N查找上一个匹配，2n查找下面第二个匹配
+:help set 查看set命令的帮助信息
+:set 显示与系统预设值不同的设定参数，就是自己修改的那些设定
+:syntax on|off 打开和关闭程序的语法高亮
+:set bg=dark|light 设置不同的背景色
+文件操作
+
+
+  :w 将编辑的内容写入文件中
+  :w! 将文件在只读状态时强制写入，实际写入还得看文档权限
+  :q 离开vim
+  :qa! 退出所有文件，对所有文件不做修改保存
+  :x 退出文件并保存对文件的修改
+  
+    :e fn 打开另外一个文件
+
+    
+      :n 跳转到下一个文件
+      :N 跳转到上一个文件
+      :bn 跳转到下一个文件
+      :bp 跳转到上一个文件
+      :ls 列出打开的所有文件
+      :b2 显示第二个文件
+    
+  
+  :q! 将至退出修改过的文件，丢掉所有修改
+  :wq 存储后退出
+  :w fn 将文件另存为文件名fn
+  :r fn 将fn文件读入并追加到目前编辑文件光标后
+  :n1, n2 w fn 将n1到n2的内容存储成fn文件
+  :n1,n2 d 将n1到n2行的所有内容删除，d是删除关键字
+  :! command 显示离开编辑器并执行command命令
+  :r! command 执行command命令，并将执行结果追加到光标后
+  :sp fn1 上下分屏打开另外一个文件
+  :vsp fn1 左右分屏打开另外一个文件
+
+
+:set nu 开启显示行号
+:set hlsearch 搜索到的关键字高亮
+:set autoindent 开启自动缩进
+:set backup 是否自动存储档案，当开启后，每次打开文件编辑的时候，原始文件会命名为fn~
+:set ruler 打开后关闭右下角的状态栏说明
+:set ic 在关键词搜索的时候区分大小写
+:set showmode 打开和关闭模式切换后的状态，比如进入insert mode的时候，左下角会显示–INSERT–
+:set backspace=(012)  进入编辑模式，可以利用backspace来按键来删除任意字符，但是某些distribution则不容许这样。此时可以通过设置backspace来实现这个功能，=2，就是删除任何字符，=0|1时，仅可以删除输入的字符，而无法删除原来文本存在的字符
+tabe fn 使用VIM插件minibuffer新建标签页功能,在一个新的标签页编辑文件fn,
+
+
+  gt 切换到下一个标签页
+  gT 切换到上一个标签页
+  :tabr 切换到第一个标签页
+  :tabl 切换到最后一个标签页
+  :tabm [N]  把当前tab移动到第N个tab之后
+
+
+:map ^M I#&amp;lt;ESC&amp;gt; 设置快捷键Ctrl+m在光标处所在行的行首插入#(#代表注释)，然后在退出编辑状态。map是关键字，后面的是key和value。key对应的是^M,这个key是快捷键Ctrl+v+M输入的，代表快捷键Ctrl+M。Value对应的是I#&amp;lt;ESC&amp;gt;, 表示依次执行这些快捷键。I表示切换光标至行首并进入编辑状态，#表示输入#，&amp;lt;ESC&amp;gt;表示退出编辑状态。
+
+:ab email hualong1009@foxmail.com  ab是关键词，该命令执行后，然后切换到编辑模式，输入email后，会把email自动替换为邮件地址hualong1009@foxmail.com。适用于频繁输入同样的长字符串场景
+Insert-mode
+
+在正常模式按下一些按键(如i, a等)进入插入模式
+i 从当前光标的位置进入插入模式
+I 进入插入模式，并将光标至于行首
+a 追加模式，置光标于当前光标之后
+A 追加模式，置光标于行末
+o 在当前行之下新加一行，并进入插入模式
+O 在当前行之前新加一行，并进入插入模式
+ESC 退出插入模式
+
+Visual-mode
+
+可视化模式
+按下v,V,&amp;lt;CTRL&amp;gt;+V, 可以进入可视化模式，操作像是拿鼠标选择一样，操作会很方便。
+继续按下CTRL+v会退出可视化模式
+
+使用方向键或者h,j,k,l进行漫游，选中相应的内容，也可以使用gg和G直接到文件首或尾
+ctrl+v 块模式，块操作，和UE的块操作一样
+o 跳转光标到选中块的另一个端点
+U 将选中块中的内容转化为大写
+O 跳转光标到块的另一个端点
+aw 选中一个字
+ab 选中{}括号中的所有内容，包含括号本身
+aB 选中{}括号中的所有内容
+ib 选中括号中的内容，不包含括号
+iB 选中括号中的所有内容
+va 当光标在””,’’,(),{},[]当中时候，va表示选中”“内所有的内容包含双引号
+vi 当光标在””,’’,(),{},[]当中时候，va表示选中”“内所有的内容不包含双引号
+&amp;gt; 块右移
+&amp;lt; 块左移
+y 复制块
+d 删除块
+～ 切换块中内容的大小写
+在该模式下选择区域后直接输入:, VIM会自动补全为:’&amp;lt;,’&amp;gt; 这个是可视模式下选区的替换操作，表示操作范围，类似与制定n1, n2
+vim编辑文本
+vim file 编辑一个文件
+vim fn1 fn2 … 同时编辑多个文件，默认只显示第一个文件，也就是file1
+vim -on fn1 fn2 … 上下分屏同时编辑多个文件
+vim -On fn1 fn2 … 左右分屏打开多个文件
+
+",
+            "wordcount": "518",
+            "inLanguage": "cn",
+            "dateCreated": "2019-08-30/",
+            "datePublished": "2019-08-30/",
+            "dateModified": "2019-08-30/",
+            "author": {
+                "@type": "Person",
+                "name": "Taten Xu",
+                
+                "image": "/assets/img/me.jpg",
+                
+                "jobTitle": "Chief Editor",
+                "url": "/authors/tatenxu/",
+                "sameAs": [
+                    "https://github.com/tatenxu","https://www.facebook.com/tatenxu","https://twitter.com/tatenxu","https://medium.com/@tatenxu","https://www.instagram.com/tatenxu","https://www.linkedin.com/in/tatenxu"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "JJW",
+                "url": "/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "tips",
+            "articleSection": "tips",
+            "keywords": ["tips","VIM"]
+        }
+        </script>
+    </body>
+</html>

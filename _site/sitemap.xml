@@ -162,6 +162,13 @@
         </url>
     
         <url>
+            <loc>/vim/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2019-08-30</lastmod>
+        </url>
+    
+        <url>
             <loc>/%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

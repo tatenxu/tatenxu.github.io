@@ -5,8 +5,8 @@
     <description>use Jekyll template to build such a site on pages.github.com</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Sep 2019 13:02:41 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Sep 2019 13:02:41 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Sep 2019 14:33:08 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Sep 2019 14:33:08 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -34,7 +34,21 @@
         
         <category>RGB</category>
         
-        <category>notes</category>
+        <category>tips</category>
+      </item>
+    
+      <item>
+        <title>VIM 使用tips</title>
+        <description>&lt;blockquote&gt; &lt;p&gt;📌转载自&lt;strong&gt;&lt;a href=&quot;https://hualong1009.github.io&quot;&gt;@hualong1009&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt; &lt;p&gt;这个库是用Xmind做的VIM编辑器的用法思维导图。里面包含一些不常用的用法，但是感觉可以很大的提高编辑效率。&lt;/p&gt; &lt;h1 id=&quot;vim用法&quot;&gt;VIM用法&lt;/h1&gt; &lt;p&gt;VIM编辑器的用法，包含基础用法和高级用法。 VIM的配置文件是用户家目录下.vimrc, 例如通过修改该文件加入inoremap jj &amp;lt;Esc&amp;gt;, 从而映射ESC键到两次j键，可以提高操作效率&lt;/p&gt; &lt;h1 id=&quot;思维导图&quot;&gt;思维导图&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;https://tatenxu.github.io/assets/files/vim.xmind&quot;&gt;xmind文件&lt;/a&gt;&lt;/p&gt; &lt;h2 id=&quot;normalmode&quot;&gt;Normal-mode&lt;/h2&gt; &lt;p&gt;用于浏览文件，也包含复制，粘贴，删除等操作。这种模式下，键盘按键会当做功能键处理，不会真正的键入这些字符&lt;/p&gt; &lt;h3 id=&quot;漫游&quot;&gt;漫游&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;h 向左&lt;/li&gt; &lt;li&gt;j 向下&lt;/li&gt; &lt;li&gt;k 向上&lt;/li&gt; &lt;li&gt;l 向右&lt;/li&gt; &lt;li&gt;0 跳到行首&lt;/li&gt; &lt;li&gt;^ 跳到行首第一个非空字符&lt;/li&gt; &lt;li&gt;$ 跳到行尾&lt;/li&gt; &lt;li&gt;gg 跳到文件的第一行的行首&lt;/li&gt; &lt;li&gt;G 快速到文件的最后一行的行尾&lt;/li&gt; &lt;li&gt;% 匹配括号移动，包括(,{,[&lt;/li&gt; &lt;li&gt;* | # 匹配光标当前所在的单词，移动光标到下一个单词处，*是下一个，#是上一个&lt;/li&gt; &lt;li&gt;ctrl+f 查看下一页内容&lt;/li&gt; &lt;li&gt;ctrl+b 查看上一页内容&lt;/li&gt; &lt;li&gt;100G 跳转到第一百行的行首&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;复制&quot;&gt;复制&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;yy 复制光标所在整行&lt;/li&gt; &lt;li&gt;100yy 复制光标坐在行及以下共100行&lt;/li&gt; &lt;li&gt;yw 复制光标开始的第一个单词&lt;/li&gt; &lt;li&gt;y$ 复制光标到行尾&lt;/li&gt; &lt;li&gt;yG 复制光标所在行到文本的结束&lt;/li&gt; &lt;li&gt;yH 复制文本开始到光标所在行的文本&lt;/li&gt; &lt;li&gt;fa 移动光标到本行下一个a的字符处&lt;/li&gt; &lt;li&gt;Fa 反前移动光标到字符a处&lt;/li&gt; &lt;li&gt;nfa 移动光标到下第n个字符a处&lt;/li&gt; &lt;li&gt;nFa 向前移动光标到第n个字符a处&lt;/li&gt; &lt;li&gt;ta 移动光标到a字符的前一个字符&lt;/li&gt; &lt;li&gt;nta 移动光标到第n个a字符前一个字符&lt;/li&gt; &lt;li&gt;Ta 向前移动光标到a字符出现的后一个字符&lt;/li&gt; &lt;li&gt;nTa 向前移动到第n个a字符出现后的一个字符&lt;/li&gt; &lt;li&gt;yfB 复制光标到第一个大写B中间的内容&lt;/li&gt; &lt;li&gt;y2fB 复制光标到第二个大写B中间的内容&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;剪切&quot;&gt;剪切&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;x 向后剪切一个字符，如果是行尾则向前剪切&lt;/li&gt; &lt;li&gt;3x 剪切三个&lt;/li&gt; &lt;li&gt;xp...</description>
+        <pubDate>Fri, 30 Aug 2019 18:48:05 +0800</pubDate>
+        <link>/vim/</link>
+        <guid isPermaLink="true">/vim/</guid>
+        
+        <category>tips</category>
+        
+        <category>VIM</category>
+        
+        <category>tips</category>
       </item>
     
       <item>
