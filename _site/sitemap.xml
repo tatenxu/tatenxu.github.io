@@ -151,21 +151,14 @@
             <loc>/protobuf/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-17</lastmod>
+            <lastmod>2019-08-30</lastmod>
         </url>
     
         <url>
-            <loc>/protobuf/2/</loc>
+            <loc>/colors/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-17</lastmod>
-        </url>
-    
-        <url>
-            <loc>/protobuf/view-all/</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2019-05-17</lastmod>
+            <lastmod>2019-08-30</lastmod>
         </url>
     
         <url>

@@ -5,14 +5,14 @@
     <description>use Jekyll template to build such a site on pages.github.com</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Sep 2019 12:37:10 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Sep 2019 12:37:10 +0800</lastBuildDate>
+    <pubDate>Mon, 02 Sep 2019 13:02:41 +0800</pubDate>
+    <lastBuildDate>Mon, 02 Sep 2019 13:02:41 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>笔记模板</title>
-        <description>&lt;p&gt;Cas sociis natoque penatibus et magnis &lt;a href=&quot;#&quot;&gt;dis parturient montes&lt;/a&gt;, nascetur ridiculus mus. &lt;em&gt;Aenean eu leo quam.&lt;/em&gt; Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Etiam porta &lt;strong&gt;sem malesuada magna&lt;/strong&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt; &lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline HTML elements&lt;/h2&gt; &lt;p&gt;HTML defines a long list of available inline tags, a complete list of...</description>
-        <pubDate>Fri, 17 May 2019 07:48:05 +0800</pubDate>
+        <title>Protocal Buffers Overview</title>
+        <description>&lt;h2 id=&quot;proto-file-&quot;&gt;&lt;em&gt;.proto&lt;/em&gt; file&lt;/h2&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt;：打算序列化的数据结构单位 –&amp;gt; 为每个mmessage和message中的每个field命名。&lt;/p&gt; &lt;h3 id=&quot;语法&quot;&gt;语法&lt;/h3&gt; &lt;ol&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tutorial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt; 包分割管理，避免命名冲突&lt;/li&gt; &lt;li&gt;基础数据类型，包含bool, int32, float, double, and string&lt;/li&gt; &lt;li&gt;复杂数据类型：自定义&lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt;，可嵌套定义&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;=1&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;=2&lt;/code&gt;： 是二进制编码时对数据成员的唯一tag。（tip：1-15编码少于一个字节，因此常必需字段用1-15，repeated字段会对其分配的数字tag re-encoding）&lt;/li&gt; &lt;li&gt;modifiers：每个field都必须有一个修饰语 &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;required&lt;/code&gt;：必需字段，如果debug阶段出现，则会产生assertion错误。&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;optional&lt;/code&gt;：可选字段，可填写默认值（&lt;code class=&quot;highlighter-rouge&quot;&gt;[default = HOME];&lt;/code&gt;），如果未填写，则系统默认基础类型值。&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;repeated&lt;/code&gt;：可重复字段，可以为0次。&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ol&gt; &lt;h3 id=&quot;编译proto文件&quot;&gt;编译&lt;em&gt;.proto&lt;/em&gt;文件&lt;/h3&gt; &lt;p&gt;for c++： &lt;code class=&quot;highlighter-rouge&quot;&gt;protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto&lt;/code&gt;&lt;/p&gt; &lt;h2 id=&quot;generated-protobuf-api-&quot;&gt;generated protobuf API&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;getters：&lt;em&gt;.proto&lt;/em&gt; 文件中定义的field的名字的小写&lt;/li&gt; &lt;li&gt;setters：前缀&lt;code class=&quot;highlighter-rouge&quot;&gt;set_&lt;/code&gt; + 定义的名称&lt;/li&gt; &lt;li&gt;是否存在：&lt;code class=&quot;highlighter-rouge&quot;&gt;has_&lt;/code&gt; + 定义的名称&lt;/li&gt; &lt;li&gt;清空：&lt;code class=&quot;highlighter-rouge&quot;&gt;clear_&lt;/code&gt; + 定义的名称&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;字符串类型field的额外API：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mutable_&lt;/code&gt; + 定义的名称&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;repeated field 的额外函数：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;名称 + &lt;code class=&quot;highlighter-rouge&quot;&gt;_size()&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;枚举类型与嵌套类：&lt;/p&gt; &lt;ul&gt; &lt;li&gt;类名称::field名称&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;标准的message-api-&quot;&gt;标准的message API&lt;/h3&gt; &lt;p&gt;操作整个message&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bool SerializeToString(string*...</description>
+        <pubDate>Fri, 30 Aug 2019 20:48:05 +0800</pubDate>
         <link>/protobuf/</link>
         <guid isPermaLink="true">/protobuf/</guid>
         
@@ -20,35 +20,21 @@
         
         <category>protobuf</category>
         
-        <category>blog</category>
+        <category>notes</category>
       </item>
     
       <item>
-        <title>笔记模板</title>
-        <description>&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt; &lt;p&gt;Cum sociis natoque penatibus et magnis dis &lt;code class=&quot;highlighter-rouge&quot;&gt;code element&lt;/code&gt; montes, nascetur ridiculus mus.&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Example can be run directly in your JavaScript console&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Create a function that takes two arguments and returns the sum of those arguments&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;return a + b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Call the function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;adder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;gt; 8&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Etiam...</description>
-        <pubDate>Fri, 17 May 2019 07:48:05 +0800</pubDate>
-        <link>/protobuf/2/</link>
-        <guid isPermaLink="true">/protobuf/2/</guid>
+        <title>Some Colors with RGB Value</title>
+        <description>&lt;p&gt;&amp;lt;font color=#F0F8FF&amp;gt;AliceBlue&amp;lt;/font&amp;gt;&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;color name&lt;/th&gt; &lt;th&gt;RGB&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#F0F8FF&amp;gt;AliceBlue&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#F0F8FF&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#FAEBD7&amp;gt;AntiqueWhite&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#FAEBD7&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#00FFFF&amp;gt;Aqua&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#00FFFF&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#7FFFD4&amp;gt;Aquamarine&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#7FFFD4&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#F0FFFF&amp;gt;Azure&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#F0FFFF&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#F5F5DC&amp;gt;Beige&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#F5F5DC&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#FFE4C4&amp;gt;Bisque&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#FFE4C4&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#000000&amp;gt;Black&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#000000&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#FFEBCD&amp;gt;BlanchedAlmond&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#FFEBCD&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#0000FF&amp;gt;Blue&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#0000FF&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#8A2BE2&amp;gt;BlueViolet&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#8A2BE2&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#A52A2A&amp;gt;Brown&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#A52A2A&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#DEB887&amp;gt;BurlyWood&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#DEB887&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#5F9EA0&amp;gt;CadetBlue&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#5F9EA0&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#7FFF00&amp;gt;Chartreuse&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#7FFF00&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#D2691E&amp;gt;Chocolate&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#D2691E&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#FF7F50&amp;gt;Coral&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#FF7F50&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&amp;lt;font color=#6495ED&amp;gt;CornflowerBlue&amp;lt;/font&amp;gt;&lt;/td&gt; &lt;td&gt;#6495ED&lt;/td&gt;...</description>
+        <pubDate>Fri, 30 Aug 2019 20:48:05 +0800</pubDate>
+        <link>/colors/</link>
+        <guid isPermaLink="true">/colors/</guid>
+        
+        <category>tips</category>
+        
+        <category>RGB</category>
         
         <category>notes</category>
-        
-        <category>protobuf</category>
-        
-        <category>blog</category>
-      </item>
-    
-      <item>
-        <title>笔记模板</title>
-        <description>&lt;p&gt;Cas sociis natoque penatibus et magnis &lt;a href=&quot;#&quot;&gt;dis parturient montes&lt;/a&gt;, nascetur ridiculus mus. &lt;em&gt;Aenean eu leo quam.&lt;/em&gt; Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Etiam porta &lt;strong&gt;sem malesuada magna&lt;/strong&gt; mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.&lt;/p&gt; &lt;h2 id=&quot;inline-html-elements&quot;&gt;Inline HTML elements&lt;/h2&gt; &lt;p&gt;HTML defines a long list of available inline tags, a complete list of...</description>
-        <pubDate>Fri, 17 May 2019 07:48:05 +0800</pubDate>
-        <link>/protobuf/view-all/</link>
-        <guid isPermaLink="true">/protobuf/view-all/</guid>
-        
-        <category>notes</category>
-        
-        <category>protobuf</category>
-        
-        <category>blog</category>
       </item>
     
       <item>

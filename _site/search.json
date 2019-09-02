@@ -2,11 +2,19 @@
   
   
     {
-      "title"    : "笔记模板",
+      "title"    : "Protocal Buffers Overview",
       "tags"     : "notes and protobuf",
-      "categories" : "blog",
+      "categories" : "notes",
       "url"      : "/protobuf/",
-      "date"     : "05/17/2019"
+      "date"     : "08/30/2019"
+    } ,
+  
+    {
+      "title"    : "Some Colors with RGB Value",
+      "tags"     : "tips and RGB",
+      "categories" : "notes",
+      "url"      : "/colors/",
+      "date"     : "08/30/2019"
     } ,
   
     {
