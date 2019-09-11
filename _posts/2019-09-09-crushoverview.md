@@ -6,7 +6,7 @@ subtitle: CRUSH 算法简单学习与代码调用分析。
 description: >-
   CRUSH 算法简单学习与代码调用分析。
 image: >-
-  ../assets/notes-imgs/CRUSH-calls.png
+  ../assets/notes-imgs/crush-calls.png
 # optimized_image: >-
 #   https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
 category: notes
@@ -62,7 +62,7 @@ Controlled Replication Under Scalable Hashing
 
 ### crush调用关系
 CRUSH test 入口
-![calls](../assets/notes-imgs/CRUSH-calls.png)
+![calls](../assets/notes-imgs/crush-calls.png)
 
 ### 容灾域判断入口
 1. `crush_choose_firstn()`:
