@@ -5,9 +5,64 @@
     <description>use Jekyll template to build such a site on pages.github.com</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Sep 2019 20:33:41 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Sep 2019 20:33:41 +0800</lastBuildDate>
+    <pubDate>Wed, 11 Sep 2019 18:13:52 +0800</pubDate>
+    <lastBuildDate>Wed, 11 Sep 2019 18:13:52 +0800</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>CRUSH Overview</title>
+        <description>&lt;h1 id=&quot;-crush-overview&quot;&gt;&lt;font style=&quot;color: #6495ED&quot;&gt; CRUSH Overview&lt;/font&gt;&lt;/h1&gt; &lt;p&gt;Controlled Replication Under Scalable Hashing&lt;/p&gt; &lt;h2 id=&quot;-解决的问题-&quot;&gt;&lt;font style=&quot;color: #778899&quot;&gt; 解决的问题 &lt;/font&gt;&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;存储设备数量变化，且异构的存储设备（&lt;font style=&quot;color: #2E8B57&quot;&gt; 数据迁移 &lt;/font&gt;）&lt;/li&gt; &lt;li&gt;数据备份（&lt;font style=&quot;color: #2E8B57&quot;&gt; 可靠性&lt;/font&gt;）&lt;/li&gt; &lt;/ol&gt; &lt;h2 id=&quot;-crush算法-&quot;&gt;&lt;font style=&quot;color: #778899&quot;&gt; CRUSH算法 &lt;/font&gt;&lt;/h2&gt; &lt;h3 id=&quot;straw2算法-&quot;&gt;straw2算法&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;输入：数据唯一标志符（pg_id），存储拓扑（crush map），数据备份策略（placement rule）&lt;/li&gt; &lt;li&gt;时间复杂度：O(&lt;em&gt;N&lt;/em&gt;)，但是抵御结构变化的能力好。&lt;/li&gt; &lt;li&gt;与straw相比，straw2计算签长时仅使用自身长度。&lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;cluster-map&quot;&gt;cluster map&lt;/h3&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;ceph集群拓扑的&lt;font style=&quot;color: #2E8B57&quot;&gt;逻辑&lt;/font&gt;描述：&lt;/p&gt; &lt;p&gt;root –&amp;gt; bucket &lt;em&gt;X n&lt;/em&gt; –&amp;gt; device,device也可以抽象为一个bucket&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;每个节点拥有一个唯一的数字ID，只有叶节点（device）有非负的数字ID。&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;h3 id=&quot;placement-rule数据分布策略&quot;&gt;placement rule，数据分布策略&lt;/h3&gt; &lt;p&gt;三个操作：&lt;/p&gt; &lt;ol&gt; &lt;li&gt;take：从cluster map中选择指定的bucket&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select(pg_id, cluster map, rule)&lt;/code&gt;：从输入的bucket中随机选择指定类型和数量的items &lt;ul&gt; &lt;li&gt;备份策略：多副本 &amp;amp; 纠删码&lt;/li&gt; &lt;li&gt;相应算法：firstn &amp;amp; indep&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;emit：输出选择结果给上级调用并返回&lt;/li&gt; &lt;/ol&gt; &lt;h2 id=&quot;-crush-code-&quot;&gt;&lt;font style=&quot;color: #778899&quot;&gt; CRUSH Code &lt;/font&gt;&lt;/h2&gt; &lt;h3 id=&quot;test-framework&quot;&gt;test framework&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://github.com/google/googletest&quot;&gt;google test&lt;/a&gt;&lt;/li&gt;...</description>
+        <pubDate>Mon, 09 Sep 2019 20:48:05 +0800</pubDate>
+        <link>/crushoverview/</link>
+        <guid isPermaLink="true">/crushoverview/</guid>
+        
+        <category>notes</category>
+        
+        <category>CRUSH</category>
+        
+        <category>Ceph</category>
+        
+        <category>gtest</category>
+        
+        <category>google</category>
+        
+        <category>notes</category>
+      </item>
+    
+      <item>
+        <title>C Tips</title>
+        <description>&lt;h1 id=&quot;c-tips&quot;&gt;C Tips&lt;/h1&gt;
+&lt;h3 id=&quot;sort-in-c&quot;&gt;sort in C&lt;/h3&gt;
+
+&lt;p&gt;header: stdlib.h&lt;/p&gt;
+
+&lt;p&gt;prototype: &lt;code class=&quot;highlighter-rouge&quot;&gt;void qsort(void *base,int nelem,int width,int (*fcmp)(const void *,const void *));&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;参数：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;待排序数组首地址&lt;/li&gt;
+  &lt;li&gt;数组中待排序元素数量&lt;/li&gt;
+  &lt;li&gt;各元素的占用空间大小&lt;/li&gt;
+  &lt;li&gt;指向函数的指针，用于确定排序的顺序&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;array-copy-in-c&quot;&gt;array copy in C&lt;/h3&gt;
+
+&lt;p&gt;header: string.h&lt;/p&gt;
+
+&lt;p&gt;prototype: &lt;code class=&quot;highlighter-rouge&quot;&gt;void *memcpy(void*dest, const void *src, size_t n);&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Sep 2019 20:48:05 +0800</pubDate>
+        <link>/Ctips/</link>
+        <guid isPermaLink="true">/Ctips/</guid>
+        
+        <category>tips</category>
+        
+        <category>C</category>
+        
+        <category>tips</category>
+      </item>
     
       <item>
         <title>gRPC Overview</title>
@@ -19,6 +74,8 @@
         <category>notes</category>
         
         <category>gRPC</category>
+        
+        <category>google</category>
         
         <category>notes</category>
       </item>
@@ -33,6 +90,8 @@
         <category>notes</category>
         
         <category>protobuf</category>
+        
+        <category>google</category>
         
         <category>notes</category>
       </item>
