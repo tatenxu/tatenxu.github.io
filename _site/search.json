@@ -26,6 +26,14 @@
     } ,
   
     {
+      "title"    : "19-八月",
+      "tags"     : "life, 北京, and DIDI",
+      "categories" : "life",
+      "url"      : "/august/",
+      "date"     : "08/31/2019"
+    } ,
+  
+    {
       "title"    : "Protocal Buffers Overview",
       "tags"     : "notes, protobuf, and google",
       "categories" : "notes",

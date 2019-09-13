@@ -62,7 +62,7 @@
             
                 <changefreq>weekly</changefreq>
                 <priority>1</priority>
-                <lastmod>2019-09-11</lastmod>
+                <lastmod>2019-09-13</lastmod>
             
         </url>
     
@@ -166,6 +166,13 @@
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2019-09-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>/august/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2019-08-31</lastmod>
         </url>
     
         <url>
